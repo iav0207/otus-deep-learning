@@ -19,11 +19,11 @@ path = './MNIST_data'
 
 mnist_transform = transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5,), (0.5,)),
+    transforms.Normalize((0,), (1,)),
 ])
 
-train_data = datasets.MNIST(path, train=True, download=True, transform=transforms.ToTensor())
-test_data = datasets.MNIST(path, train=False, download=True, transform=transforms.ToTensor())
+train_data = datasets.MNIST(path, train=True, download=True, transform=mnist_transform)
+test_data = datasets.MNIST(path, train=False, download=True, transform=mnist_transform)
 
 print(train_data[0][0])
 
