@@ -40,9 +40,12 @@ WORKDIR /home/playground
 
 CMD [ "/bin/bash" ]
 
-COPY src/introduction/*.ipynb /home/playground/
-COPY src/introduction/*.py /home/playground/
+COPY src/introduction/*.ipynb /home/playground/introduction/
+COPY src/introduction/*.py /home/playground/introduction/
 
-COPY src/logistic_regression/log_reg.ipynb /home/playground
+COPY src/logistic_regression/log_reg.ipynb /home/playground/logistic_regression/
+
+COPY src/entropy/*.ipynb /home/playground/entropy/
+COPY src/entropy/*.py /home/playground/entropy/
 
 ENTRYPOINT jupyter notebook --no-browser --allow-root --ip 0.0.0.0 --port 8765
