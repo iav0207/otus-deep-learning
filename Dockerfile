@@ -48,4 +48,8 @@ COPY src/logistic_regression/log_reg.ipynb /home/playground/logistic_regression/
 COPY src/entropy/*.ipynb /home/playground/entropy/
 COPY src/entropy/*.py /home/playground/entropy/
 
+COPY MNIST_data /home/playground/regularization/
+COPY src/regularization/mnist_mlp.ipynb /home/playground/regularization/
+COPY src/regularization/utils.py /home/playground/regularization/
+
 ENTRYPOINT jupyter notebook --no-browser --allow-root --ip 0.0.0.0 --port 8765
